@@ -57,6 +57,7 @@ export const UserOrGroupDetailScreen: Navigation.Screen<"UserOrGroupDetailScreen
             </View>
           )}
 
+          {/* some dummy button */}
           <Card>
             <CardRow withBorder onPress={() => {}}>
               <Text color="theme">Export chat</Text>

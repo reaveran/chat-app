@@ -15,7 +15,7 @@ export const ChatFooter = ({ onPressSend }: ChatFooterProps) => {
   };
   return (
     <View style={styles.footerContainer}>
-      <TextInput style={{ flex: 1 }} onChangeText={onChangeText} value={text} />
+      <TextInput style={styles.textInput} onChangeText={onChangeText} value={text} />
       <TouchableOpacity onPress={onSend}>
         <Icon name="send-button" />
       </TouchableOpacity>
@@ -29,5 +29,11 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
+  },
+  textInput: {
+    flex: 1,
+    padding: 0,
+    height: 25,
   },
 });

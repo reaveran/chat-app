@@ -179,6 +179,7 @@ export const ChatDetailScreen: Navigation.Screen<"ChatDetailScreen"> = (props) =
       if (additionalSectionsData) {
         temp.data = [
           {
+            // just some random id. Other option is to use uuid.
             id: (Math.floor(Math.random() * (1000 - 1 + 1)) + 1).toString(),
             userId: selfId,
             name: "Me",
@@ -271,15 +272,7 @@ export const ChatDetailScreen: Navigation.Screen<"ChatDetailScreen"> = (props) =
       />
       <Modal visible={isActiveOption} animationType="fade" transparent={true}>
         <TouchableOpacity activeOpacity={1} onPress={() => setIsActiveOption(false)} style={styles.overlay}>
-          <View
-            style={{
-              padding: 20,
-              borderRadius: 10,
-              width: "80%", // Set width as per your requirement
-              maxHeight: "80%", // Set maximum height as per your requirement
-              overflow: "hidden",
-            }}
-          >
+          <View style={styles.modalContainer}>
             {activeItem && (
               <ChatMessage
                 data={activeItem}
@@ -291,6 +284,7 @@ export const ChatDetailScreen: Navigation.Screen<"ChatDetailScreen"> = (props) =
                 isActiveOption={isActiveOption}
               />
             )}
+            {/* some dummy options */}
             <Card style={commonStyles.marginTop}>
               <CardRow withBorder onPress={() => {}}>
                 <Text>Reply</Text>
@@ -327,12 +321,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "rgba(0, 0, 0, 0.8)",
   },
-  optionContainer: {
-    backgroundColor: "white",
+  modalContainer: {
     padding: 20,
     borderRadius: 10,
     width: "80%", // Set width as per your requirement
-    maxHeight: "80%", // Set maximum height as per your requirement
     overflow: "hidden",
   },
 });

@@ -11,6 +11,10 @@ import {
   userDetail,
 } from "src/assets/dummyData";
 
+// This is a dummy API with dummy data and dummy API
+// On the real env, we need to setup the header with authorization to get user content
+// Some of the params that actually needed are not used but I will leave it there
+
 export const chatApi = {
   getChatList: async () => {
     return chatListData;
